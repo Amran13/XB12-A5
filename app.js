@@ -20,17 +20,17 @@ cards.forEach(card => {
         navigator.clipboard.writeText(serviceNumber); 
         copyCount++;
         document.getElementById("copyCount").innerText = copyCount;
-        alert("Copied number: " + serviceNumber);
+        alert("Copy number: " + serviceNumber);
     };
     let callBtn = card.querySelector(".callBtn");
     callBtn.onclick = function () {
         if (coinCount < 20) {
-            alert("Not enough coins! You need at least 20.");
+            alert("Do not have enough coin");
             return;
         }
         coinCount = coinCount - 20;
         document.getElementById("coinCount").innerText = coinCount;
-        alert(`Calling ${serviceName} at ${serviceNumber}`);
+        alert(` ${serviceName} - ${serviceNumber}`);
         let now = new Date();
         let timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
         let li = document.createElement("li");
